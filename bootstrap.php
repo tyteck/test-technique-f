@@ -11,6 +11,9 @@ define('BASE_PATH', __DIR__ . '/');
 require_once BASE_PATH . 'app/helpers.php';
 $config  = require_once BASE_PATH . 'config.php';
 
+dd($_ENV, $_SERVER, getenv());
+$_SERVER['APP_ENV'] ?: 'local';
+
 $environment = 'local';
 if (isset($_SERVER['APP_ENV']) && $_SERVER['APP_ENV'] === 'testing') {
     $environment = 'testing';
