@@ -51,7 +51,8 @@ class Minifier
     {
         return array_map(
             fn ($item) => $this->transform($item),
-            $this->db->query('select * from ' . $this->table)->get()
+            $this->db->query('select * from ' . $this->table)
+                ->get()
         );
     }
 

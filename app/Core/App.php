@@ -28,16 +28,4 @@ class App
     {
         return static::container()->resolve($key);
     }
-
-    public static function setEnvironment(string $environment): void
-    {
-        if (is_null(static::$environment)) {
-            static::$environment = $environment;
-        }
-    }
-
-    public static function environment(): string
-    {
-        return static::$environment;
-    }
 }

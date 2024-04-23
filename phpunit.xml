@@ -11,6 +11,5 @@
   </testsuites>
   <php>
     <env name="APP_ENV" value="testing" force="true"/>
-    <env name="FREDT" value="testing" force="true"/>
   </php>
 </phpunit>

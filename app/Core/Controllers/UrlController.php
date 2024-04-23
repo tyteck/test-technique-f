@@ -21,9 +21,6 @@ class UrlController
 
     public function index(): int
     {
-        var_dump('fuuuuuuuu', $_SERVER['APP_ENV']);
-        exit;
-
         try {
             echo json_encode([
                 'status' => 'success',

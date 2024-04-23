@@ -22,7 +22,7 @@ try {
     $verb = HttpVerb::from($method);
     $router->route($path, $verb, $queries);
 } catch (Throwable $thrown) {
-    header(header: 'Content-Type: application/json', response_code: $thrown->getCode());
+    // header(header: 'Content-Type: application/json', response_code: $thrown->getCode());
     echo json_encode([
         'status'  => 'error',
         'message' => $thrown->getMessage(),

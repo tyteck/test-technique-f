@@ -6,7 +6,7 @@ namespace Tests\Features;
 
 use App\Core\App;
 use App\Core\Database;
-use PHPUnit\Framework\TestCase;
+use Tests\BaseTestCase;
 use Tests\Traits\RefreshDatabase;
 
 /**
@@ -14,7 +14,7 @@ use Tests\Traits\RefreshDatabase;
  *
  * @coversNothing
  */
-class FeaturesTestCase extends TestCase
+class FeaturesTestCase extends BaseTestCase
 {
     use RefreshDatabase;
 
@@ -26,17 +26,20 @@ class FeaturesTestCase extends TestCase
     {
         parent::setUp();
 
-        // exit('FTC : ' . $_SERVER['APP_ENV']);
         $this->db = App::resolve(Database::class);
-        $this->createTableIfNotExists();
+        /*
+                    $this->createTableIfNotExists();
 
-        $results = $this->db->query('select count(*) as nb from urls')->get();
-        $this->assertEquals(0, $results[0]['nb']);
+                    $results = $this->db->query('select count(*) as nb from urls')->get();
+                    $this->assertEquals(0, $results[0]['nb']);
+         */
     }
 
-    public function tearDown(): void
-    {
-        $this->dropTableUrls();
-        parent::tearDown();
-    }
+    /*
+        public function tearDown(): void
+        {
+            $this->dropTableUrls();
+            parent::tearDown();
+        }
+    */
 }
